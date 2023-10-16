@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import static constant.Constant.ConstantUser.*;
 public class UserDAOImpl implements dao.UserDAO<User> {
 
     public static UserDAOImpl getInstance() {
@@ -130,11 +131,11 @@ public class UserDAOImpl implements dao.UserDAO<User> {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String username = resultSet.getString(this.USERNAME);
-                String fullName = resultSet.getString(this.FULL_NAME);
-                int age = resultSet.getInt(this.AGE);
-                String sex = resultSet.getString(this.SEX);
-                String address = resultSet.getString(this.ADDRESS);
+                String username = resultSet.getString(USERNAME);
+                String fullName = resultSet.getString(FULL_NAME);
+                int age = resultSet.getInt(AGE);
+                String sex = resultSet.getString(SEX);
+                String address = resultSet.getString(ADDRESS);
                 User user = new User(username, fullName, age, sex, address);
                 userArrayList.add(user);
             }
@@ -166,11 +167,11 @@ public class UserDAOImpl implements dao.UserDAO<User> {
             preparedStatement.setString(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String username = resultSet.getString(this.USERNAME);
-                String fullName = resultSet.getString(this.FULL_NAME);
-                int age = resultSet.getInt(this.AGE);
-                String sex = resultSet.getString(this.SEX);
-                String address = resultSet.getString(this.ADDRESS);
+                String username = resultSet.getString(USERNAME);
+                String fullName = resultSet.getString(FULL_NAME);
+                int age = resultSet.getInt(AGE);
+                String sex = resultSet.getString(SEX);
+                String address = resultSet.getString(ADDRESS);
                 user = new User(username, fullName, age, sex, address);
 
             }

@@ -24,8 +24,10 @@ public class DataSource {
         hikariDataSource = new HikariDataSource(hikariConfig);
     }
 
+    private DataSource() {
+    }
 
-    private Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException {
         return hikariDataSource.getConnection();
     }
 
